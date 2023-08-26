@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <div class="logo-name">
+        <div class="logo-name" onclick="window.location='index.html';">
             <img class="logo" src="images/tent_small.png" alt="logo">
             <h1>ULFer Zeltlager</h1>
         </div>
@@ -47,7 +47,7 @@
             <input type="text" id="form-name" placeholder="Name" name="name" required>
             <input type="email" id="form-email" placeholder="E-Mail" name="email" required>
             <input type="text" id="form-phone" placeholder="Telefonnummer (optional)" name="phone">
-            <textarea id="form-message" rows="4" placeholder="Worum geht's?" name="message"></textarea>
+            <textarea id="form-message" rows="4" placeholder="Worum geht's?" name="message" required></textarea>
             <button type="submit">Senden</button>
 
             <input type="hidden" name="_next" value="https://johannesbreitenbach.github.io/Zeltlagerwebsite-ULF/success.html">
