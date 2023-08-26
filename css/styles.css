@@ -273,6 +273,7 @@ button:focus{
     padding: clamp(2rem, 8rem, 10px);
     background: url("/images/Vogelperspektive.jpeg") repeat 0 0;
     background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
