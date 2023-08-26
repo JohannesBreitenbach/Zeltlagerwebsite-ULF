@@ -7,7 +7,7 @@
     --Light_Brown: #daad86;
     --Dark_Brown: rgb(188, 152, 106);
     --Beige: #fbeec1;
-    --BEIGE_TRANSPARENT: rgba(251, 238, 193, 0.8);
+    --BEIGE_TRANSPARENT: rgba(251, 238, 193, 0.4);
 
     --fs-xl: clamp(2.5rem, 4vw, 20000rem);
     /*mind. 2.5rem, immer wenns geht 12vw, aber höchstens 12rem*/
@@ -96,7 +96,11 @@ nav {
 }
 
 .nav__links li a:hover {
-    color: #0088a9
+    color: var(--BEIGE_TRANSPARENT);
+}
+
+.nav-selected {
+    border-bottom: 2px double var(--Beige);
 }
 
 .content {
@@ -217,17 +221,15 @@ footer {
     padding: 10px;
     background-color: var(--Beige);
     border-radius: 20%;
-    opacity: 0.6;
 }
 
 .socialIcons a i {
     font-size: 2em;
     color: black;
-    opacity: 0.9;
 }
 
 .socialIcons a:hover{
-    opacity: 1;
+    opacity: 0.5;
     transition: 0.5s;
 }
 
@@ -249,13 +251,12 @@ footer {
     text-decoration: none;
     font-family: var(--ff-titles);
     font-size: 1.3em;
-    opacity: 0.6;
     transition: 0.5s;
     padding: 0;
 }
 
 .footerNav ul li a:hover{
-    opacity:1;
+    color: var(--BEIGE_TRANSPARENT);
 }
 
 .footerBottom {
@@ -290,6 +291,7 @@ footer {
     width: 100vw;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-bottom: 1rem;
 }
 
 .gallery img {
