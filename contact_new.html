@@ -37,7 +37,7 @@
 
     <content class="form-container">
 
-        <form action="https://formsubmit.co/ae6cbcf5ca02ce564343881c6fdd83e5" method="POST">
+        <form class="contact-form" action="https://formsubmit.co/ae6cbcf5ca02ce564343881c6fdd83e5" method="POST">
             <section class="page_head">
                 <h1>Kontakt</h1>
                 <p>Haben Sie noch irgendwelche Fragen? Kein Problem, wir helfen gerne!</p>
@@ -52,23 +52,25 @@
             <textarea id="form-message" rows="4" placeholder="Worum geht's?" name="message" required></textarea>
             <button type="submit">Senden</button>
 
-            <input type="hidden" name="_next" value="https://johannesbreitenbach.github.io/Zeltlagerwebsite-ULF/success.html">
+            <input type="hidden" name="_next"
+                value="https://johannesbreitenbach.github.io/Zeltlagerwebsite-ULF/success.html">
         </form>
     </content>
 
     <footer>
         <div class="footerContainer">
-            <p>Neugierig? Dann tragen Sie sich einfach und unverbindlich in den E-Mail-Verteiler ein oder besuchen Sie uns auf Instagram!</p>
+            <p>Neugierig? Dann tragen Sie sich einfach in den E-Mail-Verteiler ein oder besuchen Sie
+                uns auf Instagram!</p>
             <div class="socialIcons">
-                <div class="footer-email-sub-container">
+                <form name='submit-to-google-sheet' class="footer-email-sub-container">
                     <input type="email" id="footer-email-input" placeholder="E-Mail eingeben" required>
                     <button type="submit" id="footer-email-submit">Hinzufügen</button>
-                </div>
+                </form>
 
                 <a href="https://www.instagram.com/ulfzeltlager/?hl=de"><i class="fa-brands fa-instagram"></i></a>
                 <!--Falls wir mal YouTube haben sollten-->
                 <a href="" style="display: none;"><i class="fa-brands fa-youtube"></i></a>
-                                
+
             </div>
             <div class="footerNav">
                 <ul>
@@ -84,11 +86,27 @@
         </div>
     </footer>
 
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzeceool1UJ8gT4FykVZGnG1UYhbLT39i_Wy0tzDnGM9tvWrFNtpfZx0NBrmHFfhKyYtA/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            let formData = new FormData(form);
+            formData.append("email", document.getElementById('footer-email-input').value)
+            for (var pair of formData.entries()) {
+                console.log(pair[0] + ', ' + pair[1]);
+            }
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script language="javascript" src="js/index.js" type="module"></script>
-    <script src="js/main.js" type="module"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.2/countUp.min.js'></script>
     <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
 

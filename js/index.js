@@ -21,7 +21,6 @@ function setCountdownValue() {
     let seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
     // Displaying the countdown
-    //document.getElementById("countdown").innerHTML = days;
     const countUp = new CountUp('countdown', days, { enableScrollSpy: true });
     if (!countUp.error) {
         countUp.start();
