@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "countup.js": "^2.7.1",
+    "countup.js": "^2.8.0",
+    "flipdown": "^0.3.2",
     "jquery": "^3.7.0",
     "mdbootstrap": "^4.20.0"
   }
