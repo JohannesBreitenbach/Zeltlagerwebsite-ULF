@@ -9,6 +9,7 @@ const navLinks = Array.from(document.querySelectorAll('nav a')).forEach(link => 
     }
 });
 
+//Counter Days
 function setCountdownValue() {
     let nextCamp = new Date("2024-07-26T00:00:00");
     let now = new Date();
@@ -31,3 +32,35 @@ function setCountdownValue() {
 
 // Call the function immediately
 setCountdownValue();
+
+//FOOTER
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzeceool1UJ8gT4FykVZGnG1UYhbLT39i_Wy0tzDnGM9tvWrFNtpfZx0NBrmHFfhKyYtA/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            let formData = new FormData(form);
+            formData.append("email", document.getElementById('footer-email-input').value)
+            for (var pair of formData.entries()) {
+                console.log(pair[0] + ', ' + pair[1]);
+            }
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    // Get the snackbar DIV
+                    var x = document.getElementById("snackbar");
+                    // Add the "show" class to DIV
+                    x.className = "show";
+                    // After 3 seconds, remove the show class from DIV
+                    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+                    form.reset();
+                })
+                .catch(error => {
+                    // Get the snackbar DIV
+                    var x = document.getElementById("snackbar");
+                    x.textContent = "Hmm.. da hat etwas nicht funktioniert, versuchen Sie es bitte später erneut!"
+                    // Add the "show" class to DIV
+                    x.className = "show";
+                    // After 3 seconds, remove the show class from DIV
+                    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+                })
+        })

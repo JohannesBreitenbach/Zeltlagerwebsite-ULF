@@ -239,39 +239,39 @@ footer {
     color: black;
 }
 
-.socialIcons a:hover{
+.socialIcons a:hover {
     opacity: 0.5;
     transition: 0.5s;
 }
 
-.footer-email-sub-container{
-	margin: 3px 0 2px;
+.footer-email-sub-container {
+    margin: 3px 0 2px;
     display: flex;
     width: 90vw;
     max-width: 500px;
 }
 
-#footer-email-input{
+#footer-email-input {
     border: 0;
     outline: none;
-	border-radius: 1rem 0 0 1rem;
-	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-	font-size: 14px;
-	height: 42px;
-	padding: 1rem;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    height: 42px;
+    padding: 1rem;
     width: 70%
 }
 
-#footer-email-submit{
+#footer-email-submit {
     background-color: #233329;
     background-image: linear-gradient(315deg, #44914d 0%, #233329 74%);
-	border: 0;
-	border-radius: 0 1rem 1rem 0;
-	color: var(--Beige);
-	font-size: calc(var(--fs-navbar) * 0.6);
+    border: 0;
+    border-radius: 0 1rem 1rem 0;
+    color: var(--Beige);
+    font-size: calc(var(--fs-navbar) * 0.6);
     font-family: var(--ff-titles);
-	height: 42px;
-	padding: 0.5rem;
+    height: 42px;
+    padding: 0.5rem;
     width: 30%;
 }
 
@@ -280,14 +280,14 @@ footer {
     text-align: center;
 }
 
-.footerNav ul{
+.footerNav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
     padding-left: 0;
 }
 
-.footerNav ul li a{
+.footerNav ul li a {
     color: var(--Beige);
     margin: 20px;
     text-decoration: none;
@@ -297,7 +297,7 @@ footer {
     padding: 0;
 }
 
-.footerNav ul li a:hover{
+.footerNav ul li a:hover {
     color: var(--BEIGE_TRANSPARENT);
 }
 
@@ -311,8 +311,8 @@ footer {
     color: var(--Beige);
 }
 
-@media (max-width: 700px){
-    .footerNav ul{
+@media (max-width: 700px) {
+    .footerNav ul {
         flex-direction: column;
     }
 
@@ -322,7 +322,7 @@ footer {
         margin: 10px;
     }
 
-    .socialIcons{
+    .socialIcons {
         display: flex;
         flex-direction: column;
     }
@@ -443,4 +443,93 @@ textarea {
     transition: background-image 0.5s ease;
     width: 12rem;
     margin-left: auto;
+
+}
+
+/*---------------------SNACKBAR------------------------*/
+
+#snackbar {
+    visibility: hidden;
+    /* Hidden by default. Visible on click */
+    min-width: 400px;
+    /* Set a default minimum width */
+    margin-left: -200px;
+    /* Divide value of min-width by 2 */
+    background-color: var(--Beige);
+    /* Black background color */
+    color: #000;
+    /* White text color */
+    text-align: center;
+    /* Centered text */
+    border-radius: 8px;
+    /* Rounded borders */
+    padding: 16px;
+    /* Padding */
+    position: fixed;
+    /* Sit on top of the screen */
+    z-index: 1;
+    /* Add a z-index if needed */
+    left: 50%;
+    /* Center the snackbar */
+    bottom: 30px;
+    /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible;
+    /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 5s;
+    animation: fadein 0.5s, fadeout 0.5s 5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }

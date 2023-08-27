@@ -85,23 +85,7 @@
             <p>Copyright &copy; 2023 | Designed by EyJB Media</p>
         </div>
     </footer>
-
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzeceool1UJ8gT4FykVZGnG1UYhbLT39i_Wy0tzDnGM9tvWrFNtpfZx0NBrmHFfhKyYtA/exec'
-        const form = document.forms['submit-to-google-sheet']
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            let formData = new FormData(form);
-            formData.append("email", document.getElementById('footer-email-input').value)
-            for (var pair of formData.entries()) {
-                console.log(pair[0] + ', ' + pair[1]);
-            }
-            fetch(scriptURL, { method: 'POST', body: formData })
-                .then(response => console.log('Success!', response))
-                .catch(error => console.error('Error!', error.message))
-        })
-    </script>
+    <div id="snackbar">E-Mail wurde erfolgreich hinzugefügt!</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

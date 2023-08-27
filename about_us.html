@@ -40,10 +40,18 @@
 
     <footer>
         <div class="footerContainer">
+            <p>Neugierig? Dann tragen Sie sich einfach in den E-Mail-Verteiler ein oder besuchen Sie
+                uns auf Instagram!</p>
             <div class="socialIcons">
+                <form name='submit-to-google-sheet' class="footer-email-sub-container">
+                    <input type="email" id="footer-email-input" placeholder="E-Mail eingeben" required>
+                    <button type="submit" id="footer-email-submit">Hinzufügen</button>
+                </form>
+
                 <a href="https://www.instagram.com/ulfzeltlager/?hl=de"><i class="fa-brands fa-instagram"></i></a>
                 <!--Falls wir mal YouTube haben sollten-->
                 <a href="" style="display: none;"><i class="fa-brands fa-youtube"></i></a>
+
             </div>
             <div class="footerNav">
                 <ul>
@@ -58,6 +66,7 @@
             <p>Copyright &copy; 2023 | Designed by EyJB Media</p>
         </div>
     </footer>
+    <div id="snackbar">E-Mail wurde erfolgreich hinzugefügt!</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
