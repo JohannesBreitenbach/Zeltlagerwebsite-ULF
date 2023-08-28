@@ -5,7 +5,6 @@ const activePage = window.location.pathname;
 const navLinks = Array.from(document.querySelectorAll('nav a')).forEach(link => {
     if (link.href.includes(`${activePage}`)) {
         link.classList.add('nav-selected')
-        console.log("Hello")
     }
 });
 
